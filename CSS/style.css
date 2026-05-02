@@ -1,145 +1,87 @@
-body{
-    position: relative;
-    background-image: url("../IMG/fondo-de-pantalla-pagina.jpg");
-    background-position: center; /* centra la imagen */
-    background-repeat: no-repeat; /*Hace que la imagen no se repita */
-    background-size: cover; /*cubre toda la pantalla sin deformarse */
-    background-attachment: fixed; /* Evita que el fondo se mueva al hacer scroll */
-    min-height: 100vh; /* Necesario para que el posicionamiento absoluto funcione bien */
+/* 1. Configuración del Fondo - Ahora aplicado a html para mejor scroll */
+html, body {
+    height: 100%;
     margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    url("../IMG/fondo-de-pantalla-pagina.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* 2. Títulos con estilo Neon-Rock */
 h1 {
-    color: white;
-    background-color: black;
-    text-align: center;
-    padding: 50px;
-    margin: 50px auto;
-    border: 20px;
-    border-radius: 40px;
-    width: 60%;
-    max-width: 600px;
-    border: 3px solid #ff0000;
-
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.7);
+    border: 3px solid #ff0000 !important; /* El !important asegura que gane a Bootstrap */
+    background-color: rgba(0, 0, 0, 0.9) !important;
 }
 
-.descripcion-album-5150 {
-    position: absolute; /* Esto nos permite ubicarlo con precisión */
-    
-    /* Coordenadas para ponerlo en el espacio vacío */
-    top: 40%;            /* Distancia desde arriba (ajusta este % a tu gusto) */
-    right: 5%;           /* Distancia desde la derecha (pégalo más o menos al borde) */
-    
-    /* Tamaño y estilo de la caja de texto */
-    width: 35%;          /* Ancho de la columna de texto (para que no se desparrame) */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro transparente para que se lea bien */
-    color: white;        /* Texto blanco */
-    padding: 25px;       /* Espacio dentro de la caja */
-    border-radius: 10px; /* Bordes redondeados */
-    border: 2px solid #ff0000; /* Borde rojo Van Halen */
-    
-    /* Sombra para darle profundidad */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    
-    /* Estilos de fuente */
-    font-family: Arial, sans-serif;
-    line-height: 1.6;    /* Espaciado entre líneas para mejor lectura */
+/* 3. Estilo para las Cards de los Álbumes */
+/* Reemplazamos .primer-album, .segundo-album por una clase general */
+.row .p-3 {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 2px solid #ff0000 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave al pasar el mouse */
 }
 
-.descripcion-album-5150 h2 {
-    color: #ff0000;     /* Título en rojo */
-    margin-top: 0;      /* Quita el espacio de arriba */
-    font-size: 2.2rem;
+.row .p-3:hover {
+    transform: translateY(-10px); /* La tarjeta sube un poquito */
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.4);
+    border-color: white !important;
 }
 
-.album {
-    
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-    background-color:  rgba(0, 0, 0, 0.8);
-    text-align: center;
-    padding: 40px;
-    margin: 30px auto;
-    border: 5px solid #ff0000;
-    border-radius: 30px;
-    width: 60%;
-    max-width: 500px;
-}
-
-
-.primer-album {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    color: white;
-    left: 5%;
-    border: 3px solid #ff0000;
-    border-radius: 25%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 39px;
-}
-
-.segundo-album {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    color: white;
-    left: 35%;
-    border: 3px solid #ff0000;
-    border-radius: 25%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 35px;
-}
-.tercer-album {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    color: white;
-    left: 70%;
-    border: 3px solid #ff0000;
-    border-radius: 25%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 27px;
-}
-
-.franketstrat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    padding: 40px;
-    top: 150%;
+/* 4. Sección de la Frankenstrat */
+.bg-light.text-dark {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-left: 10px solid #ff0000;
 }
 
 .titulo-franketstrat {
-    position: absolute; 
-    top: 150%;            
-    right: 5%;          
-    width: 35%;          
-    background-color: rgba(0, 0, 0, 0.8); 
-    color: white;        
-    padding: 25px;       
-    border-radius: 10px; 
-    border: 2px solid #ff0000; 
-    max-width: 300px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    font-family: Arial, sans-serif;
-
+    color: #ff0000;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ff0000;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 
-.parrafo-guitarra {
-    position: absolute;
-    top: 160%;
-    right: 6%;
-    border: 30px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8) ;
-    border-radius: 10px;
-    max-width: 300px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) ;
-    padding: 15px;
+/* 5. Ajustes de imágenes */
+img {
+    transition: filter 0.3s ease;
+}
+
+img:hover {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+/* 6. Mejoras para el texto */
+p {
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* Tipografía Van Halen para títulos (Opcional si quieres agregar una fuente de Google) */
+h1, h2, h3 {
+    font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+/* Busca la sección de la franketstrat o agrégalo al final */
+
+.franketstrat, .img-fluid.rounded.shadow { 
+    /* Esta es la clase que identifica a tu imagen de la guitarra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+}
+
+.franketstrat:hover, img.img-fluid[alt="franketstrat"]:hover {
+    transform: translateY(-15px) scale(1.02); /* Sube 15px y se agranda un 2% */
+    box-shadow: 0 20px 40px rgba(255, 0, 0, 0.4) !important;
+    filter: brightness(1.1);
 }
